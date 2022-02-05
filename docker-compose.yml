@@ -1,0 +1,46 @@
+version: '3.7'
+
+networks:
+    blog:
+
+services:
+    mysql:
+        image: mysql:8.0
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: blog
+        command: --default-authentication-plugin=mysql_native_password
+        volumes:
+            - ./docker_cache/mysql:/var/lib/mysql
+        ports:
+            - "3307:3306"
+        networks:
+            - blog
+
+    app:
+        build:
+            context: ./docker
+            dockerfile: dockerfile-onboarding
+        depends_on:
+            - mysql
+        user: "1000:1000"
+        working_dir: /var/www/html
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - blog
+
+    npm:
+        image: node:14
+        entrypoint: [ 'npm' ]
+        user: "1000:1000"
+        volumes:
+            - ./:/src
+        working_dir: /src
+        environment:
+            - NODE_ENV=development
+        networks:
+            - blog
