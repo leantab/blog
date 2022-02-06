@@ -17,10 +17,7 @@
 
 <div class="p-6 sm:px-20 bg-white border-b border-gray-400">
 	<div class="py-6 flex justify-center">
-		<a href="/posts" class="mx-4 my-2 text-white bg-indigo-700 px-4 py-2">Posts</a>
-		<a href="/create_post"
-			class="mx-4 my-2 text-black bg-gray-200 border-2 border-gray-900 px-4 py-2 hover:text-white hover:bg-gray-800">Create
-			a new
-			post</a>
+		<a href="/posts" class="mx-4 my-2 text-white bg-indigo-700 px-4 py-2 hover:bg-indigo-200 hover:text-black ">Posts</a>
+		<a href="/create_post" class="mx-4 my-2 text-black bg-gray-200 border-2 border-gray-900 px-4 py-2 hover:text-white hover:bg-gray-800">Create a new post</a>
 	</div>
 </div>
