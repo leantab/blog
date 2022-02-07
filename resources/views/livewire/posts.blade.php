@@ -5,7 +5,7 @@
 </x-slot>
 
 <div class="py-12">
-	<div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+	<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 		<div class="bg-white shadow-xl sm:rounded-lg grid grid-cols-2">
 			@forelse ($posts as $post)
 

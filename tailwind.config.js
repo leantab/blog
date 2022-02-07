@@ -8,11 +8,16 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                primary: '#088008',
+                secondary: '#1FA2C8'
+            }
         },
     },
 

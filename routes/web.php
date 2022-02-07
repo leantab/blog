@@ -20,11 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/posts', Posts::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/posts', Posts::class)->name('posts');
     Route::get('/create_post', [PostController::class, 'create']);
 });
